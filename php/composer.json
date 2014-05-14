@@ -4,7 +4,7 @@
 	"keywords": ["hypercharge", "payment", "api", "sdk"],
 	"hompage":"https://github.com/hypercharge/dummy_cli_examples",
 	"licence":"MIT",
-	"minimum-stability":"dev",
+	"____minimum-stability":"dev",
 	"require": {
 		"php": ">=5.3",
 		"hypercharge/hypercharge-php": "*"

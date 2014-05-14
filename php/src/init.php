@@ -14,7 +14,7 @@ class HyperchargeCredentials {
 	private function __construct() {
 		$this->credentials = json_decode(file_get_contents(dirname(dirname(__DIR__)).'/credentials.json'));
 
-		Hypercharge\Config::set($this->credentials->user, $this->credentials->password, Hypercharge\Config::ENV_SANDBOX);
+		Hypercharge\Config::set($this->credentials->login, $this->credentials->password, Hypercharge\Config::ENV_SANDBOX);
 	}
 
 	public static function instance() {
