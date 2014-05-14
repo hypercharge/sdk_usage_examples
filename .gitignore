@@ -1,0 +1,5 @@
+credentials.json
+*.DS_Store
+php/composer.lock
+php/composer.phar
+php/vendor/
