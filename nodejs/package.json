@@ -21,7 +21,7 @@
     "payment", "psp", "api", "sdk"
   ],
   "description": "Hypercharge node.js SDK cli examples",
-  "scripts": {
+  "____scripts": {
     "test": "./node_modules/.bin/mocha -R spec test/*.js"
   }
 }

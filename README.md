@@ -62,24 +62,48 @@ At first setup your `credentials.json` as described in [general setup](#general-
 All node.js stuff is in the `/nodejs` directory.
 So go there
 ```sh
-$ cd php
+$ cd nodejs
 ```
 
 install dependencies
 ```sh
-$ composer install
+$ npm install
 ```
 
 show installed packages
 ```sh
-$ composer show -i
+$ npm list
 ```
 
-You should be able to run an example script now:
+You should be able to run the (simple) example script now.
 ```sh
-$ php src/wpf_create.php
+$ node lib/main.js
+validate with sale schema...
+{ instance: { transaction_type: 'sale', transaction_id: '23423423423' },
+  schema:
+   { description: 'Hypercharge sale Transaction request',
+     type: 'object',
+     '$schema': 'http://json-schema.org/draft-03/schema',
+     additionalProperties: false,
+     properties: { payment_transaction: [Object] } },
+  propertyPath: 'instance',
+  errors:
+   [ { property: 'instance',
+       message: 'Property transaction_type does not exist in the schema',
+       schema: [Object],
+       instance: [Object],
+       stack: 'instance Property transaction_type does not exist in the schema' },
+     { property: 'instance',
+       message: 'Property transaction_id does not exist in the schema',
+       schema: [Object],
+       instance: [Object],
+       stack: 'instance Property transaction_id does not exist in the schema' },
+     { property: 'instance.payment_transaction',
+       message: 'is required',
+       schema: [Object],
+       stack: 'instance.payment_transaction is required' } ],
+  throwError: undefined }
 ```
-The hypercharge WFP (Web Payment Form) should be shown in your webbrowser now.
 
-
+TODO: add more examples
 
