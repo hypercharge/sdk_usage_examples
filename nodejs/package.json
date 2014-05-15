@@ -1,0 +1,27 @@
+{
+  "name": "hypercharge-cli-examples",
+  "version": "0.0.1",
+  "main": "./lib/main.js",
+  "author": "Jan Mentzel <jan@hypercharge.net>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hypercharge/dummy_cli_examples.git"
+  },
+  "dependencies": {
+    "hypercharge-schema": "*"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "keywords": [
+    "payment", "psp", "api", "sdk"
+  ],
+  "description": "Hypercharge node.js SDK cli examples",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -R spec test/*.js"
+  }
+}

@@ -3,3 +3,4 @@ credentials.json
 php/composer.lock
 php/composer.phar
 php/vendor/
+nodejs/node_modules/

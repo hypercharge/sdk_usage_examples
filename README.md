@@ -55,4 +55,31 @@ $ php src/wpf_create.php
 The hypercharge WFP (Web Payment Form) should be shown in your webbrowser now.
 
 
+Node.js
+=======
+At first setup your `credentials.json` as described in [general setup](#general-setup).
+
+All node.js stuff is in the `/nodejs` directory.
+So go there
+```sh
+$ cd php
+```
+
+install dependencies
+```sh
+$ composer install
+```
+
+show installed packages
+```sh
+$ composer show -i
+```
+
+You should be able to run an example script now:
+```sh
+$ php src/wpf_create.php
+```
+The hypercharge WFP (Web Payment Form) should be shown in your webbrowser now.
+
+
 

@@ -1,7 +1,7 @@
 {
 	"name":"hypercharge/dummy-cli-examples",
-	"description":"Hypercharge PHP dummy application",
-	"keywords": ["hypercharge", "payment", "api", "sdk"],
+	"description":"Hypercharge PHP SDK cli examples",
+	"keywords": ["payment", "psp", "api", "sdk"],
 	"hompage":"https://github.com/hypercharge/dummy_cli_examples",
 	"licence":"MIT",
 	"____minimum-stability":"dev",
