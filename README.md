@@ -23,10 +23,10 @@ $ cp credentials.json.example credentails.json
 	"channel" : "a5f82d1f7eb0d4ff2ff76120462a51dd1039e1af"
 }
 ```
-Theese 40 char hex strings are just dummies.
+The 40 char hex strings are just dummies.
 Replace them with your login, password and channel.
 
-Note: your `credentials.json` file is secret! Never push it to git or any other cvs!
+Note: your `credentials.json` file is secret! Never push it to git, svn or any other version control system!
 
 PHP
 ===
@@ -40,17 +40,17 @@ $ cd php
 
 install dependencies
 ```sh
-$ composer install
+/php$ composer install
 ```
 
 show installed packages
 ```sh
-$ composer show -i
+/php$ composer show -i
 ```
 
 You should be able to run an example script now:
 ```sh
-$ php src/wpf_create.php
+/php$ php src/wpf_create.php
 ```
 The hypercharge WFP (Web Payment Form) should be shown in your webbrowser now.
 
@@ -67,17 +67,17 @@ $ cd nodejs
 
 install dependencies
 ```sh
-$ npm install
+/nodejs$ npm install
 ```
 
 show installed packages
 ```sh
-$ npm list
+/nodejs$ npm list
 ```
 
 You should be able to run the (simple) example script now.
 ```sh
-$ node lib/main.js
+/nodejs$ node lib/main.js
 validate with sale schema...
 { instance: { transaction_type: 'sale', transaction_id: '23423423423' },
   schema:

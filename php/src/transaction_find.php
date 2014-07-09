@@ -3,7 +3,7 @@ require_once 'init.php';
 
 function reconcile() {
 
-	//Hypercharge\Config::setLogger(new Hypercharge\StdoutLogger());
+	Hypercharge\Config::setLogger(new Hypercharge\StdoutLogger());
 
 	$transaction = Hypercharge\Transaction::find(
 					HyperchargeCredentials::getChannelToken()
