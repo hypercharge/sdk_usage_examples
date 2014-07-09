@@ -13,8 +13,8 @@ function create_ideal_transaction() {
 
   echo "\ncreate ideal transaction ...";
 
-  // TODO replace with your ngrok Forwarding URL (see abough):
-  $myShopUrl = "https://5ba44a4a.ngrok.com";
+  // see credentials.json
+  $myShopUrl = HyperchargeCredentials::getMyShopBaseUrl();
 
   $data = array(
     "transaction_id"      => "145236",

@@ -26,6 +26,10 @@ class HyperchargeCredentials {
 		return HyperchargeCredentials::instance()->credentials->channel;
 	}
 
+	public static function getMyShopBaseUrl() {
+		return HyperchargeCredentials::instance()->credentials->myShopBaseUrl;
+	}
+
 }
 // force init
 HyperchargeCredentials::instance();

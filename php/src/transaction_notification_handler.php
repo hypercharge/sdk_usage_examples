@@ -15,26 +15,29 @@ require_once 'init.php';
   enable internet forwarding to localhost:8080
   $ ngrok 8080
 */
-// $notification is an instance of Hypercharge\PaymentNotification
-error_log("POST\n". print_r($_POST, true), 4);
+$logger = new Hypercharge\PHPErrorLogLogger();
+// uncomment if you want to see more low-level stuff
+//Hypercharge\Config::setLogger($logger);
 
+$logger->debug("POST:\n". print_r($_POST, true));
+
+// $notification is an instance of Hypercharge\TransactionNotification
 $notification = Hypercharge\Transaction::notification($_POST);
 if($notification->isVerified()) {
   $transaction = $notification->getTransaction();
   if($transaction->isApproved()) {
 
-    error_log("transaction success". print_r($transaction, true), 4);
-    ////////////////////////////////////////
+    $logger->debug("OK, transaction status: ". print_r($transaction->status, true));
+    $logger->error("transaction: ". print_r($transaction, true));
+
     // implement your business logic here
-    ////////////////////////////////////////
 
   } else {
 
-    error_log("transaction NOT successfull". print_r($transaction, true), 4);
-    ////////////////////////////////////////
-    // check $transaction->status  and $transaction->error
+    $logger->error("Not OK! transaction status: ". $transaction->status);
+    $logger->error("transaction: ". print_r($transaction, true));
+
     // implement your business logic here
-    ////////////////////////////////////////
 
   }
 
@@ -44,6 +47,6 @@ if($notification->isVerified()) {
   die( $notification->ack() );
 
 } else {
-  error_log("Signature invalid or message does not come from hypercharge.\n"
-    ,"Check your configuration or notificatoin request origin. POST". print_r($notification, true), 4);
+  $logger->error("Signature invalid or message does not come from hypercharge.\n"
+    ,"Check your configuration or notificatoin request origin. POST". print_r($notification, true));
 }
