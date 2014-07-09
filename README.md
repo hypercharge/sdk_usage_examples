@@ -9,6 +9,7 @@ General Setup
 =============
 
 Hypercharge support creates a test-account and sends you login, password and channel.
+channel is only needed for Transactions. channel is not needed for WPF or mobile.
 
 In the root folder copy the file `credentials.json.example` to `credentails.json`
 ```sh
@@ -26,6 +27,7 @@ $ cp credentials.json.example credentails.json
 ```
 The 40 char hex strings are just dummies.
 Replace them with your login, password and channel.
+`channel` value can be left blank if you do WPF or mobile Payments only.
 `myShopBaseUrl` see Notifications bellow.
 
 Note: your `credentials.json` file is secret! Never push it to git, svn or any other version control system!
@@ -41,8 +43,6 @@ enable internet forwarding to 127.0.0.1:80
 ```sh
 $ ngrok 80
 ```
-your local webserver is now accessible from the internet via http://2bc69ef.ngrok.com
-
 ngork starts and says something like
 ```
 ngrok
@@ -55,13 +55,16 @@ Web Interface                 127.0.0.1:4040
 # Conn                        55
 Avg Conn Time                 113.49ms
 ```
-take the `https://....ngork.com` url an replace it into your `myShopBaseUrl` in `credentials.json`:
+Take the `https://....ngork.com` url an replace it into your `myShopBaseUrl` in `credentials.json`:
 ```json
 {
 	...
 	"myShopBaseUrl": "https://2bc69ef.ngrok.com"
 }
 ```
+
+Your local webserver is now accessible from the internet via e.g. `http://2bc69ef.ngrok.com`
+
 
 To replay notifications with ngork use the ngork Web Interface [http://127.0.0.1:4040](http://127.0.0.1:4040).
 
@@ -103,7 +106,7 @@ php/src$ php -S localhost:8080
 ```
 now let's see if the notification forwarding works.
 ```sh
-/php$ php src/wpf_create.php
+php/src$ php wpf_create.php
 ```
 fill out the form and submit (test) payment.
 You will see the notification in the localhost:8080 console a few seconds later.

@@ -2,18 +2,10 @@
 require_once 'init.php';
 
 /*
-  Transaction Notification example for async Transactions (not Payment, WPF or mobile)
+  Transaction Notification handler example for async Transactions (sale3d, ideal_sale, ... )
   e.g. see transaction_create_ideal.php
 
-  We recomment to use ngrok https://ngrok.com/ to be able to receive notifications at your local dev maschine.
-
-  Register at ngork and download ngork.
-
-  start the notification handler with local php http server
-  $ php -S localhost:8080
-
-  enable internet forwarding to localhost:8080
-  $ ngrok 8080
+  How you run the notification handler on your local maschine see README chapter "Notifications".
 */
 $logger = new Hypercharge\PHPErrorLogLogger();
 // uncomment if you want to see more low-level stuff

@@ -2,8 +2,10 @@
 require_once 'init.php';
 
 /*
-  Transaction Notification example for async Transactions (not Payment, WPF or mobile)
+  Payment Notification example for Payments (WPF or mobile)
   e.g. see wpf_create.php
+
+  How you run the notification handler on your local maschine see README chapter "Notifications".
 */
 $logger = new Hypercharge\PHPErrorLogLogger();
 // uncomment if you want to see more low-level stuff
