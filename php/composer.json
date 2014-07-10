@@ -4,7 +4,6 @@
 	"keywords": ["payment", "psp", "api", "sdk"],
 	"hompage":"https://github.com/hypercharge/dummy_cli_examples",
 	"licence":"MIT",
-	"____minimum-stability":"dev",
 	"require": {
 		"php": ">=5.3",
 		"hypercharge/hypercharge-php": "*"
@@ -14,5 +13,13 @@
 	},
 	"autoload": {
 		"classmap": ["src/"]
-	}
+	},
+	"___comment":" for local hypercharge-php repository ",
+	"___minimum-stability":"dev",
+	"___repositories": [
+    {
+        "type": "vcs",
+        "url" : "/Users/janmentzel/work/hypercharge/hypercharge-php"
+    }
+	]
 }

@@ -23,12 +23,14 @@ if($notification->isVerified()) {
 
     // implement your business logic here
 
-    if(isset($payment->transaction)) {
-      $trx = $payment->transaction;
-      $logger->debug("payment.transaction: ". print_r($trx, true));
-
+    // If $payment doesn't provide enough infos, you can get further details with the Transaction.
+    // $notification->getTransaction() returns the transaction which has triggered the notification -
+    // as $payment->transactions can contain multiple Transactions. In most cases this is the the transaction of interest here.
+    if($notification->hasTransaction()) {
+      $trx = $notification->getTransaction();
+      $logger->debug("notifiaction transaction: ". print_r($trx, true));
     } else {
-      $logger->debug("ERROR: payment has no transaction");
+      $logger->debug("ERROR: notification has no transaction");
     }
 
   } else {
@@ -36,10 +38,10 @@ if($notification->isVerified()) {
     $logger->debug("Not OK! payment status: ". $payment->status);
 
     $error = 'unknwon error';
-    if($payment->transaction) {
-      $error = $payment->transaction->error;
+    if($notification->hasTransaction()) {
+      $error = $notification->getTransaction()->error;
     }
-    $logger->error("payment NOT successfull. Error:\n". print_r($error, true));
+    $logger->error("payment NOT successfull. Error: ". print_r($error, true));
 
     // implement your business logic here
 

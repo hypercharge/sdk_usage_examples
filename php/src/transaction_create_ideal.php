@@ -50,7 +50,7 @@ function create_ideal_transaction() {
       // only for cli use on OSX: open ideal page in browser.
       // In sandbox it's a bogus ideal page
       $cmd = 'open '.$transaction->redirect_url;
-      echo "\nopen wpf in browser ... ", $cmd, "\n";
+      echo "\nopen ideal frontend in browser ... ", $cmd, "\n";
       `$cmd`;
 
       // in real (Webserver-Browser environment) you would redirect the customer's browser to ideal:
