@@ -1,8 +1,8 @@
 {
-	"name":"hypercharge/dummy-cli-examples",
-	"description":"Hypercharge PHP SDK cli examples",
+	"name":"hypercharge/sdk_usage_examples",
+	"description":"Hypercharge PHP SDK cli and notification handler examples",
 	"keywords": ["payment", "psp", "api", "sdk"],
-	"hompage":"https://github.com/hypercharge/dummy_cli_examples",
+	"hompage":"https://github.com/hypercharge/sdk_usage_examples",
 	"licence":"MIT",
 	"require": {
 		"php": ">=5.3",
@@ -17,9 +17,9 @@
 	"___comment":" for local hypercharge-php repository ",
 	"___minimum-stability":"dev",
 	"___repositories": [
-    {
-        "type": "vcs",
-        "url" : "/Users/janmentzel/work/hypercharge/hypercharge-php"
-    }
+		{
+			"type": "vcs",
+			"url" : "/Users/janmentzel/work/hypercharge/hypercharge-php"
+		}
 	]
 }
