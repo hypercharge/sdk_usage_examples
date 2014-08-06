@@ -34,8 +34,8 @@ Note: your `credentials.json` file is secret! Never push it to git, svn or any o
 
 Notifications
 -------------
-Notifications are a key part of async workflows (wpf, mobile, sale_3d, ...).
-We recomment using [ngrok](https://ngrok.com/) to receive notifications from Hypercharge at your local dev maschine. ngork even can replay the notifications so you don't have to click through frontend parts over and over when developing your notification handler.
+notifications are a key part of async workflows (wpf, mobile, sale_3d, ...). Hypercharge server notifies your server when a payment was processed.
+We recomment using [ngrok](https://ngrok.com/) to receive notifications from Hypercharge at your local dev maschine. ngrok even can replay the notifications so you don't have to click through frontend parts over and over when developing your notification handler.
 
 Register at ngork. You will see install instructions - easy btw. Download the ngork binary for your platform. You might like to put the `ngork` executable into a directory in your `$PATH`  e.g. `/usr/local/bin` or `$HOME/local/bin`.
 
@@ -102,16 +102,16 @@ $ ngrok 8080
 ```
 Start the built in php webserver from the `php/src` directory (php-cli >= 5.4 required)
 ```sh
-php/src$ php -S localhost:8080
+php/src$ php -S 127.0.0.1:8080
 ```
 now let's see if the notification forwarding works.
 ```sh
 php/src$ php wpf_create.php
 ```
 fill out the form and submit (test) payment.
-You will see the notification in the localhost:8080 console a few seconds later.
+You will see the notification in the 127.0.0.1:8080 console a few seconds later.
 
-Note: If `php -S localhost:8080` doesn't work for you, ngork can forward to your local apache as well. Simply start ngork with the port of your apache (80) and serve the `php/src` directory.
+Note: If `php -S 127.0.0.1:8080` doesn't work for you, ngork can forward to your local apache as well. Simply start ngork with the port of your apache (80) and serve the `php/src` directory.
 ```sh
 $ ngork 80
 ```
