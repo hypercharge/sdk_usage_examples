@@ -15,7 +15,7 @@
 		"classmap": ["src/"]
 	},
 	"___comment":" for local hypercharge-php repository ",
-	"minimum-stability":"dev",
+	"__minimum-stability":"dev",
 	"___repositories": [
 		{
 			"type": "vcs",

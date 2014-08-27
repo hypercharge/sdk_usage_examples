@@ -29,6 +29,14 @@ function sepa_debit_sale() {
       "city"=>"Berlin",
       "country"=>"DE"
     ),
+    'shipping_address' => array(
+      'first_name' =>'Lieferando GmbH',
+      'last_name' =>'z.Hd. Hr. Mustermann',
+      'address1' =>'Lieferstraße 7a',
+      'zip_code' =>'10999',
+      'city' =>'Berlin',
+      'country' =>'DE'
+    ),
     "risk_params"=>array(
       "birthday"=>"1968-04-01"
     )
