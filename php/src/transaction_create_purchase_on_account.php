@@ -2,6 +2,7 @@
 require_once 'init.php';
 
 function purchase_on_account() {
+  Hypercharge\Config::setLogger(new Hypercharge\StdoutLogger());
 
   $data = array(
     'transaction_id' => '14',
